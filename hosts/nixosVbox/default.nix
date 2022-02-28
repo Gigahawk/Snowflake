@@ -22,7 +22,7 @@
   modules.themes = { active = "catppuccin"; };
 
   modules.desktop = {
-    xmonad.enable = true;
+    xmonad.enable = false;
     gnome.enable = true;
 
     appliances = {
