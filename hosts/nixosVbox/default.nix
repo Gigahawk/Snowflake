@@ -22,9 +22,7 @@
   modules.themes = { active = "catppuccin"; };
 
   modules.desktop = {
-    xmonad.enable = false;
-    #gnome.enable = true;
-    qtile.enable = true;
+    xmonad.enable = true;
 
     appliances = {
       termEmu = {
