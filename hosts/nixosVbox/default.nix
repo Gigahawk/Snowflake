@@ -13,10 +13,10 @@
     enable = true;
     networkManager.enable = true;
 
-#    wireGuard = {
-#      enable = true;
-#      akkadianVPN.enable = true;
-#    };
+    wireGuard = {
+      enable = false;
+      akkadianVPN.enable = false;
+    };
   };
 
   modules.themes = { active = "catppuccin"; };
