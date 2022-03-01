@@ -4,7 +4,7 @@ with lib;
 with lib.my;
 let cfg = config.modules.desktop;
 in {
-  config = mkIf (cfg.xmonad.enable || cfg.qtile.enable) {
+  config = mkIf (cfg.xmonad.enable || cfg.qtile.enable || cfg.gnome.enable) {
     user.packages = with pkgs;
       [
         (writeScriptBin "batStat" ''
