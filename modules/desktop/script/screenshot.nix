@@ -6,7 +6,7 @@ let
   cfg = config.modules.desktop;
   screenDir = "${config.user.home}/Pictures/Screenshots";
 in {
-  config = mkIf (cfg.xmonad.enable) {
+  config = mkIf (cfg.xmonad.enable || cfg.gnome.enable) {
     user.packages = with pkgs; [
       shotgun
       hacksaw
