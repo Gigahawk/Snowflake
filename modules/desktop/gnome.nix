@@ -51,7 +51,7 @@ in {
       gnomeExtensions.user-themes
     ];
 
-    environment.variables = { MOZ_ENABLE_WAYLAND = 1; };
+    environment.variables = { MOZ_ENABLE_WAYLAND = "1"; };
 
     # Enable chrome-gnome-shell in FireFox nightly (mozilla-overlay):
     home.file.".mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json".source =
