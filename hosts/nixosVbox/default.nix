@@ -23,6 +23,7 @@
 
   modules.desktop = {
     xmonad.enable = true;
+    gnome.enable = true;
 
     appliances = {
       termEmu = {
