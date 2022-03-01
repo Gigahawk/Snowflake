@@ -27,7 +27,7 @@ in {
 
     services.dbus = {
       enable = true;
-      packages = with pkgs; [ gnome.dconf ];
+      packages = with pkgs; [ dconf ];
     };
 
     services.udev = {
@@ -43,7 +43,7 @@ in {
       dconf2nix
       gnome.polari
       gnome.gnome-disk-utility
-      gnome.gnome-tweak-tool
+      gnome.gnome-tweaks
 
       # Extras:
       # gnomeExtensions.pop-os-shell
@@ -51,7 +51,7 @@ in {
       gnomeExtensions.user-themes
     ];
 
-    environment.variables = { MOZ_ENABLE_WAYLAND = 1; };
+    environment.variables = { MOZ_ENABLE_WAYLAND = "1"; };
 
     # Enable chrome-gnome-shell in FireFox nightly (mozilla-overlay):
     home.file.".mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json".source =
