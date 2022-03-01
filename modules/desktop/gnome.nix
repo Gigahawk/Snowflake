@@ -27,7 +27,7 @@ in {
 
     services.dbus = {
       enable = true;
-      packages = with pkgs; [ gnome.dconf ];
+      packages = with pkgs; [ dconf ];
     };
 
     services.udev = {
