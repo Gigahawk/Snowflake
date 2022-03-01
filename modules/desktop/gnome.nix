@@ -43,7 +43,7 @@ in {
       dconf2nix
       gnome.polari
       gnome.gnome-disk-utility
-      gnome.gnome-tweak-tool
+      gnome.gnome-tweaks
 
       # Extras:
       # gnomeExtensions.pop-os-shell
