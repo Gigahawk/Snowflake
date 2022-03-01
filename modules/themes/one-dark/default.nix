@@ -105,7 +105,7 @@ in {
       ];
     })
 
-    (mkIf (dsk.xmonad.enable || dsk.qtile.enable) {
+    (mkIf (dsk.xmonad.enable) {
       services.xserver.displayManager = {
         sessionCommands = with cfg.gtk; ''
           ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.bibata-cursors}/share/icons/${cursor.name}/cursors/${cursor.default} ${

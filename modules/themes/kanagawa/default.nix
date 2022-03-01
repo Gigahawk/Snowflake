@@ -80,7 +80,7 @@ in {
           "xtheme/90-theme".text = import ./config/Xresources cfg;
           "fish/conf.d/kanagawa.fish".source = ./config/fish/kanagawa.fish;
         }
-        (mkIf (dsk.xmonad.enable || dsk.qtile.enable) {
+        (mkIf (dsk.xmonad.enable) {
           "dunst/dunstrc".text = import ./config/dunst/dunstrc cfg;
           "rofi" = {
             source = ./config/rofi;
@@ -105,7 +105,7 @@ in {
       ];
     })
 
-    (mkIf (dsk.xmonad.enable || dsk.qtile.enable) {
+    (mkIf (dsk.xmonad.enable) {
       services.xserver.displayManager = {
         sessionCommands = with cfg.gtk; ''
           ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.bibata-cursors}/share/icons/${cursor.name}/cursors/${cursor.default} ${
