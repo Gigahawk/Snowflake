@@ -25,19 +25,19 @@ in {
 
     services.xserver = {
       enable = true;
-      displayManager = {
-        defaultSession = "none+xmonad";
-        sddm.enable = true;
-        sddm.settings = { General.InputMethod = ""; };
-      };
+      #displayManager = {
+      #  defaultSession = "none+xmonad";
+      #  sddm.enable = true;
+      #  sddm.settings = { General.InputMethod = ""; };
+      #};
 
-      windowManager.session = [{
-        name = "xmonad";
-        start = ''
-          /usr/bin/env icy-xmonad &
-          waitPID=$!
-        '';
-      }];
+      #windowManager.session = [{
+      #  name = "xmonad";
+      #  start = ''
+      #    /usr/bin/env icy-xmonad &
+      #    waitPID=$!
+      #  '';
+      #}];
     };
 
     # Prevent x11 askPass prompt on git push:
