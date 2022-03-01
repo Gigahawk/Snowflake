@@ -106,7 +106,7 @@ in {
       ];
     })
 
-    (mkIf (dsk.xmonad.enable || dsk.gnome.enable) {
+    (mkIf (dsk.xmonad.enable) {
       services.xserver.displayManager = {
         sessionCommands = with cfg.gtk; ''
           ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.bibata-cursors}/share/icons/${cursor.name}/cursors/${cursor.default} ${
@@ -120,6 +120,27 @@ in {
           rev = "2fa0a4024bab60b0ba40de274880e0c1aa6eca59";
           sha256 = "jaGQaClD7Hk4eWh+rMX8ZtcGDzb9aCu+NX5gzJ1JXQg=";
         })}";
+      };
+
+      environment.systemPackages = with pkgs; [
+        qt5.qtmultimedia
+        libsForQt5.qt5.qtgraphicaleffects
+      ];
+
+      home.file.".local/share/fcitx5/themes".source = pkgs.fetchFromGitHub {
+        owner = "icy-thought";
+        repo = "fcitx5-catppuccin";
+        rev = "3b699870fb2806404e305fe34a3d2541d8ed5ef5";
+        sha256 = "hOAcjgj6jDWtCGMs4Gd49sAAOsovGXm++TKU3NhZt8w=";
+      };
+    })
+
+    (mkIf (dsk.gnome.enable) {
+      services.xserver.displayManager = {
+        sessionCommands = with cfg.gtk; ''
+          ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-theme '${cursor.name}'
+        '';
+
       };
 
       environment.systemPackages = with pkgs; [
